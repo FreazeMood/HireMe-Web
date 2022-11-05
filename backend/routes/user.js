@@ -4,6 +4,6 @@ import cors from 'cors';
 import { ORIGIN } from "../settings/appConfig.js";
 
 const router = express.Router();
-router.get('/register', cors(ORIGIN) ,registerView);
+router.post('/register', cors(ORIGIN) ,registerView);
 router.get('/login', cors(ORIGIN), loginView); 
 export default router;

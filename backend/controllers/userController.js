@@ -1,12 +1,28 @@
-//For Register Page
-export const registerView = (req, res) => {
+import User from "../models/User.js";
 
-    res.send({test: 'for test'})
+
+export const createUser = async (req, res) => {
+
+    const user = new User(req.body);
+    await user.save()
+    res.send(user);
 
 }
-// For View 
-export const loginView = (req, res) => {
+
+export const loginUser = (req, res) => {
 
     res.send({test: 'for test'})
     
+}
+
+export const listUser = (req, res) => {
+
+}
+
+export const updateUser = (req, res) => {
+
+}
+
+export const retrieveUser = (req, res) => {
+
 }
