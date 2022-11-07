@@ -4,10 +4,10 @@ export const userCreationSchema = {
     required: ["name", "lastname", "password", "type"],
     properties: {
 
-        number: {
+        name: {
             type: "number",
         },
-        street: {
+        lastname: {
             type: "string",
         },
         password: {
