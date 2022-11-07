@@ -18,7 +18,7 @@ app.use('/api/users', router);
 app.use((error, request, response, next) => {
 
   if (error instanceof ValidationError) {
-    response.status(400).send(error.validationErrors);
+    response.status(400).send(error.validationErrors.body[0].message); // sends the error message
     next();
   } else {
     next(error);

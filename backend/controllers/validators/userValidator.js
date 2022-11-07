@@ -5,13 +5,16 @@ export const userCreationSchema = {
     properties: {
 
         name: {
-            type: "number",
+            type: "string",
+            minLength: 1
         },
         lastname: {
             type: "string",
+            minLength: 1
         },
         password: {
-            type: "string"
+            type: "string",
+            minLength: 8
         },
         type: {
             type: "string",
