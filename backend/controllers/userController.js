@@ -15,14 +15,14 @@ export const loginUser = (req, res) => {
     
 }
 
-export const listUser = (req, res) => {
+export const listUsers = async(req, res) => {
+    res.send(await User.find());
+}
+
+export const retrieveUser = (req, res) => {
 
 }
 
 export const updateUser = (req, res) => {
-
-}
-
-export const retrieveUser = (req, res) => {
 
 }
