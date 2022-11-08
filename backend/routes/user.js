@@ -10,6 +10,7 @@ const { validate } = new Validator()
 
 const router = express.Router();
 router.get('/login', cors(ORIGIN), loginUser); 
+
 router.post('/', validate({body: userCreationSchema}), cors(ORIGIN) ,createUser);
 router.get('/', cors(ORIGIN), listUsers)
 
