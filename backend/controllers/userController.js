@@ -11,14 +11,12 @@ export const createUser = async (req, res) => {
 
 export const loginUser = (req, res) => {
 
-    res.send({test: 'for test'})
+    res.send({ test: 'for test' })
     
 }
 
 export const listUsers = async(req, res) => {
-
     res.send({ test: await User.find() });
-
 }
 
 export const retrieveUser = (req, res) => {
