@@ -11,7 +11,7 @@ export const createUser = async (req, res) => {
 
 export const loginUser = (req, res) => {
 
-    res.send({test: 'for test'})
+    res.send({ test: 'for test' })
     
 }
 
