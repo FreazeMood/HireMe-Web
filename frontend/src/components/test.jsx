@@ -6,9 +6,9 @@ const Test = () => {
     const [resp, setResp] = React.useState('')
 
     const sendRequest = async () => {
-        const res = await fetch('http://localhost:8080/api/users/register', {mode: 'cors'})
+        const res = await fetch('http://localhost:8080/api/users/', {mode: 'cors'})
         const data = await res.json()
-        setResp(data.test)
+        setResp(JSON.stringify(data.test))
     }
 
     return (
