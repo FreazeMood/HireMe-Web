@@ -6,9 +6,15 @@ const Test = () => {
     const [resp, setResp] = React.useState('')
 
     const sendRequest = async () => {
+<<<<<<< HEAD
         const res = await fetch('http://localhost:8080/api/users/', {mode: 'cors'})
         const data = await res.json()
         setResp(JSON.stringify(data.test))
+=======
+        const res = await fetch('http://localhost:8080/api/register', {mode: 'cors'})
+        const data = await res.json()
+        setResp(data.test)
+>>>>>>> 2cabee1 (separted routes into mvc archi)
     }
 
     return (
