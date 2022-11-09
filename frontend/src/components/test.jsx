@@ -13,7 +13,6 @@ const Test = () => {
 
     return (
     <>
-        <p>{resp}</p>  
         <div 
             style={{
                 display: 'flex',
@@ -22,6 +21,7 @@ const Test = () => {
                 height: '100vh',
             }}
             >
+                <p>{resp}</p>  
             <button className='requestBtn' onClick={sendRequest}>send req</button>
             <button onClick={() => setResp('')}>reset</button>
 
