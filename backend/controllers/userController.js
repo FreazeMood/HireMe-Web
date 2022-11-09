@@ -16,7 +16,7 @@ export const loginUser = (req, res) => {
 }
 
 export const listUsers = async(req, res) => {
-    res.send(await User.find());
+    res.send({ test: await User.find() });
 }
 
 export const retrieveUser = (req, res) => {
