@@ -15,12 +15,15 @@ export const loginUser = (req, res) => {
     
 }
 
-export const listUsers = async(req, res) => {
+export const listUsers = async (req, res) => {
     res.send({ test: await User.find() });
 }
 
-export const retrieveUser = (req, res) => {
-
+export const retrieveUser = async (req, res) => {
+    
+    const user = await User.find({ _id: req.params.id });
+    res.send(user)
+    
 }
 
 export const updateUser = (req, res) => {
