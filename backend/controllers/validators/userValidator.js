@@ -1,7 +1,7 @@
 export const userCreationSchema = {
 
     type: "object",
-    required: ["name", "lastname", "password", "type"],
+    required: ["name", "lastname", "password", "type", "email"],
     properties: {
 
         name: {
@@ -9,6 +9,10 @@ export const userCreationSchema = {
             minLength: 1
         },
         lastname: {
+            type: "string",
+            minLength: 1
+        },
+        email: {
             type: "string",
             minLength: 1
         },

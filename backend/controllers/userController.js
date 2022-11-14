@@ -9,9 +9,20 @@ export const createUser = async (req, res) => {
 
 }
 
-export const loginUser = (req, res) => {
+export const loginUser = async (req, res) => {
 
-    res.send({ test: 'for test' })
+    const { email, password } = req.body;
+
+    const isAuth = User.findOne({ email: email }, (err, user) => {
+        if (err) throw err;
+     
+        user.comparePassword(password, (err, isMatch) => {
+            if (err) throw err;
+            console.log(isMatch);
+        });
+    }).clone();
+
+    res.send(await isAuth);
     
 }
 
