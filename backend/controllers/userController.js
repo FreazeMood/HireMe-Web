@@ -1,10 +1,20 @@
 import User from "../models/User.js";
 
 
-export const createUser = async (req, res) => {
+export const createUser = async (req, res, next) => {
 
-    const user = new User(req.body);
-    await user.save()
+    const user_exist = await User.findOne({ email: req.body.email }).catch((err) => {
+        console.log(err);
+    });
+
+    if (user_exist) {
+        res.statusCode = 409;
+        const err = 'User alreay exists.'
+        return next(err);
+    }
+
+    const user = await User.create(req.body);
+
     res.send(user);
 
 }

@@ -9,9 +9,10 @@ import { userCreationSchema } from "../controllers/validators/userValidator.js";
 const { validate } = new Validator()
 
 const router = express.Router();
-router.post('/login', cors(ORIGIN), loginUser); 
+router.post('/login', cors(ORIGIN), loginUser);
+ 
 router.post('/', validate({body: userCreationSchema}), cors(ORIGIN) ,createUser);
-router.get('/', cors(ORIGIN), listUsers)
+router.get('/', cors(ORIGIN), listUsers);
 router.get('/:id?', cors(ORIGIN), retrieveUser);
 
 export default router;
